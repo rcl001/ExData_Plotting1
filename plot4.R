@@ -83,3 +83,5 @@ plot_4()
 
 # Close PNG device
 dev.off()
+# Reset to single plot layout
+par(mfrow=c(1,1))
