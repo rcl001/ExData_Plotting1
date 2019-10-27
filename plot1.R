@@ -16,16 +16,15 @@ if (!exists("dat")) {
 dat2 <- dat[dat$Date=="1/2/2007" | dat$Date=='2/2/2007',]
 
 # Convert Global_active_power to numeric
-y <- as.numeric(as.character(dat2$Global_active_power))
-
+globact <- as.numeric(as.character(dat2$Global_active_power))
 # Create histogram plot on screen
-hist(y, xlab="Global Active Power (kilowatts)", main="Global Active Power", col="red")
+hist(globact, xlab="Global Active Power (kilowatts)", main="Global Active Power", col="red")
 
 # Open PNG device
 png(filename = plot_file, width = 480, height = 480, units = "px")
 
 # Regenerate plot for file
-hist(y, xlab="Global Active Power (kilowatts)", main="Global Active Power", col="red")
+hist(globact, xlab="Global Active Power (kilowatts)", main="Global Active Power", col="red")
 
 # Close PNG device
 dev.off()

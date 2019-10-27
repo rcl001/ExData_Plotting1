@@ -20,17 +20,17 @@ dt_strings <- paste(as.character(dat2$Date), as.character(dat2$Time))
 dt_POSIX <- strptime(dt_strings,"%d/%m/%Y %H:%M:%S")
 
 # Convert Sub_metering to numeric
-y1 <- as.numeric(as.character(dat2$Sub_metering_1))
-y2 <- as.numeric(as.character(dat2$Sub_metering_2))
-y3 <- as.numeric(as.character(dat2$Sub_metering_3))
+submet_1 <- as.numeric(as.character(dat2$Sub_metering_1))
+submet_2 <- as.numeric(as.character(dat2$Sub_metering_2))
+submet_3 <- as.numeric(as.character(dat2$Sub_metering_3))
 
 # Create plot on screen
 # Start with blank plot frame
-plot(dt_POSIX, y1, type="n", xlab="", ylab="Energy sub metering")
+plot(dt_POSIX, submet_1, type="n", xlab="", ylab="Energy sub metering")
 # Add lines plot
-lines(dt_POSIX, y1, col="black")
-lines(dt_POSIX, y2, col="red")
-lines(dt_POSIX, y3, col="blue")
+lines(dt_POSIX, submet_1, col="black")
+lines(dt_POSIX, submet_2, col="red")
+lines(dt_POSIX, submet_3, col="blue")
 # Add legend
 legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
         col=c("black","red","blue"),lty=c(1,1,1))
@@ -40,11 +40,11 @@ png(filename = plot_file, width = 480, height = 480, units = "px")
 
 # Regenerate plot for file
 # Start with blank plot frame
-plot(dt_POSIX, y1, type="n", xlab="", ylab="Energy sub metering")
+plot(dt_POSIX, submet_1, type="n", xlab="", ylab="Energy sub metering")
 # Add lines plot
-lines(dt_POSIX, y1, col="black")
-lines(dt_POSIX, y2, col="red")
-lines(dt_POSIX, y3, col="blue")
+lines(dt_POSIX, submet_1, col="black")
+lines(dt_POSIX, submet_2, col="red")
+lines(dt_POSIX, submet_3, col="blue")
 # Add legend
 legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
         col=c("black","red","blue"),lty=c(1,1,1))
